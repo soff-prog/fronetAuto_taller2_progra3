@@ -239,6 +239,12 @@ document.getElementById('entityForm').addEventListener('submit', async e => {
 
 document.getElementById('resetForm').addEventListener('click', () => { state.editId = null; renderForm(); });
 document.getElementById('reloadBtn').addEventListener('click', refresh);
+document.getElementById('pdfBtn').addEventListener('click', () => {
+    window.open(
+        `${state.apiBase}/api/reporte/pdf`,
+        '_blank'
+    );
+});
 document.getElementById('saveApi').addEventListener('click', async () => {
   state.apiBase = document.getElementById('apiBase').value.replace(/\/$/, '');
   localStorage.setItem('apiBase', state.apiBase);
