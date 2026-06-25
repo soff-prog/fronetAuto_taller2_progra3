@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concesionario</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Concesionario</h1>
+    </div>
+    <div class="api-box">
+      <label for="apiBase">URL API</label>
+      <input id="apiBase" value="http://localhost:8080" />
+      <button id="saveApi">Guardar</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="tabs">
+      <button class="tab active" data-module="clientes">Clientes</button>
+      <button class="tab" data-module="autos">Autos</button>
+      <button class="tab" data-module="accesorios">Accesorios</button>
+      <button class="tab" data-module="matriculas">Matrículas</button>
+    </nav>
+
+    <section id="alert" class="alert hidden"></section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-head">
+          <h2 id="formTitle">Nuevo cliente</h2>
+          <button id="resetForm" class="secondary">Limpiar</button>
+        </div>
+        <form id="entityForm"></form>
+      </article>
+
+      <article class="card wide">
+        <div class="card-head">
+          <h2 id="listTitle">Listado de clientes</h2>
+          <button id="reloadBtn" class="secondary">Recargar</button>
+        </div>
+        <div id="tableWrap" class="table-wrap"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
